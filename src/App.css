@@ -1,0 +1,37 @@
+/* [0] Container */
+.container {
+  width: 80%;
+}
+/* [1] Reset Page */
+html {
+  font-family: "Roboto", sans-serif;
+  letter-spacing: 0.1px;
+  scroll-behavior: smooth;
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+html {
+  box-sizing: border-box;
+}
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+li {
+  list-style: none;
+}
+a {
+  text-decoration: none;
+  transition: 0.3s;
+}
+button {
+  all: unset;
+}
+button:hover {
+  cursor: pointer;
+}

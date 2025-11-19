@@ -1,0 +1,157 @@
+/* ALL Header */
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 999;
+  background: #fff;
+  padding: 12px 0;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+  display: flex;
+  justify-content: center;
+}
+
+.content {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 13px;
+  width: 100%;
+  max-width: 1200px;
+  padding: 0 20px;
+}
+
+.left-side ul,
+.right-side {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+}
+.left-side ul li,
+.right-side p,
+.right-side button {
+  margin-left: 12px;
+}
+/* [1] Header Left Side */
+.content {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 13px;
+}
+.left-side ul,
+.right-side {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+}
+.left-side ul li,
+.right-side p,
+.right-side button {
+  margin-left: 12px;
+}
+/* [1] Header Left Side */
+/* links container */
+.left-side ul li a {
+  position: relative;
+  color: gray;
+  padding: 5px 0;
+  padding-bottom: 7px;
+  transition: color 0.3s ease;
+}
+
+/* animated underline */
+.left-side ul li a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 2px;
+  width: 0%;
+  background-color: gray;
+  transition: width 0.3s ease;
+}
+
+/* on hover */
+.left-side ul li a:hover {
+  color: gray;
+}
+
+.left-side ul li a:hover::after {
+  width: 100%;
+  background-color: gray;
+}
+
+/* active link */
+.left-side ul li a.active {
+  color: black;
+  font-weight: 600;
+}
+
+.left-side ul li a.active::after {
+  width: 100%;
+  background-color: black;
+}
+/* End Header Left Side */
+
+/* Header Right Side */
+/* [2] End Header Right Side */
+.btn {
+  border: 1px solid #ddd;
+  border-radius: 50%;
+  padding: 5px;
+  color: gray;
+  transition: 0.3s;
+  margin: auto;
+}
+.btn:hover {
+  color: white;
+  background-color: black;
+}
+/* suggistion text on hover*/
+.tooltip {
+  position: relative;
+  display: inline-block;
+}
+
+.tooltip .tooltip-text {
+  visibility: hidden;
+  opacity: 0;
+  width: max-content;
+  background-color: black;
+  color: #fff;
+  text-align: center;
+  font-size: 12px;
+  padding: 6px 10px;
+  border-radius: 6px;
+
+  position: absolute;
+  bottom: -40px;
+  left: 50%;
+  transform: translateX(-50%);
+  white-space: nowrap;
+
+  transition: opacity 0.3s ease;
+  z-index: 1000;
+}
+
+.tooltip .tooltip-text::after {
+  content: "";
+  position: absolute;
+  top: -6px;
+  left: 50%;
+  transform: translateX(-50%);
+  border-width: 6px;
+  border-style: solid;
+  border-color: transparent transparent black transparent;
+}
+
+.tooltip:hover .tooltip-text {
+  visibility: visible;
+  opacity: 1;
+}
