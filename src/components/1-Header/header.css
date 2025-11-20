@@ -1,3 +1,20 @@
+/* 
+===============================
+Header 
+===============================
+  1-All Header
+  ======================
+  2-left side
+    1- links 
+    2-animation
+    3- active
+  ======================
+  3-Right Side 
+    1-buttons
+    2- suggistion text
+  ======================
+*/
+
 /* ALL Header */
 header {
   position: fixed;
@@ -23,26 +40,12 @@ header {
   padding: 0 20px;
 }
 
-.left-side ul,
-.right-side {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: row;
-}
 .left-side ul li,
 .right-side p,
 .right-side button {
   margin-left: 12px;
 }
 /* [1] Header Left Side */
-.content {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-  font-size: 13px;
-}
 .left-side ul,
 .right-side {
   display: flex;
@@ -100,7 +103,6 @@ header {
 /* End Header Left Side */
 
 /* Header Right Side */
-/* [2] End Header Right Side */
 .btn {
   border: 1px solid #ddd;
   border-radius: 50%;
@@ -155,3 +157,5 @@ header {
   visibility: visible;
   opacity: 1;
 }
+
+/* End Header Right Side */

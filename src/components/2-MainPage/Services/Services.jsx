@@ -1,5 +1,5 @@
 import "./services.css";
-
+import Book from "../Book/Book";
 export default function Services() {
-  return <div>Services</div>;
+  return <Book />;
 }
