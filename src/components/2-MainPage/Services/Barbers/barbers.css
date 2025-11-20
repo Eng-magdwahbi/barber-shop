@@ -1,0 +1,83 @@
+.barber-card {
+  display: flex;
+  flex-direction: column;
+}
+
+.header-barber {
+  background-color: #1a1a1a;
+  color: white;
+  padding: 2rem 0;
+  text-align: center;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.title-barber {
+  font-size: 3rem;
+  font-weight: bold;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.main-content {
+  flex: 1;
+  padding: 3rem 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+  max-width: 600px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.name-card {
+  background-color: white;
+  padding: 1.5rem 2rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  text-align: center;
+  border-left: 4px solid #1a1a1a;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.name-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.name {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #333;
+  margin: 0;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .title-barber {
+    font-size: 2.5rem;
+  }
+
+  .main-content {
+    padding: 2rem 1rem;
+  }
+
+  .name-card {
+    padding: 1.25rem 1.5rem;
+  }
+
+  .name {
+    font-size: 1.25rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .title-barber {
+    font-size: 2rem;
+  }
+
+  .main-content {
+    padding: 1.5rem 1rem;
+  }
+}

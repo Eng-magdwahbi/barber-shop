@@ -1,0 +1,33 @@
+.footer {
+  width: 100%;
+  background-image: url("/images/background.jpg"); /* اللون الداكن مثل الصورة */
+  padding: 80px 20px;
+  display: flex;
+}
+
+.footer-container {
+  text-align: left;
+  max-width: 900px;
+  margin-left: 20%;
+}
+
+.footer-logo {
+  color: #ffffff;
+  /* font-size: 26px; */
+  font-weight: 700;
+  margin-bottom: 35px;
+}
+
+.footer-title {
+  color: #ffffff;
+  /* font-size: 32px; */
+  font-weight: 700;
+  margin: 0;
+}
+
+.footer-subtitle {
+  margin-top: 12px;
+  font-size: 16px;
+  color: gray;
+  max-width: 500px;
+}
