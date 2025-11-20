@@ -1,0 +1,82 @@
+:root {
+  --card-bg: #ffffff;
+  --muted: #7b7b7b;
+  --accent: #111;
+  --soft: #f5f7fb;
+  --rounded: 14px;
+}
+
+.main-service-page {
+  background: linear-gradient(180deg, var(--card-bg), #fff);
+  margin-top: 80px;
+  width: 65%;
+  padding: 25px;
+  border-radius: var(--rounded);
+  box-shadow: 0 6px 18px rgba(17, 17, 17, 0.06);
+  color: black;
+}
+
+.title-service-page {
+}
+
+.content-service-page {
+}
+
+.haircut {
+  padding: 10px;
+  margin-top: 20px;
+  border-radius: 8px;
+  border: 1px solid rgba(128, 128, 128, 0.2);
+  background-color: var(--card-bg);
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: 0.3s;
+}
+
+.haircut:hover {
+  border: 1px solid black;
+}
+
+.img-des {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.img {
+  width: 60px;
+  height: 60px;
+  border-radius: 8px;
+}
+
+.img img {
+  width: 100%;
+  border-radius: 8px;
+}
+
+.des-haircut {
+  color: black;
+}
+
+.time-price {
+  display: flex;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.small-circle {
+  width: 3px;
+  height: 3px;
+  border-radius: 50%;
+  background-color: black;
+  margin-right: 10px;
+  margin-left: 10px;
+}
+
+.chevron-right-icon {
+  color: black;
+  width: 30px !important;
+  height: 30px !important;
+}

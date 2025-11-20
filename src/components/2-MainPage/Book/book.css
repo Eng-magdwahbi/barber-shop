@@ -34,7 +34,9 @@ Book Card
 }
 
 .schedule-card {
-  width: 360px;
+  width: 30%;
+  height: 40%;
+  margin-top: 80px;
   background: linear-gradient(180deg, var(--card-bg), #fff);
   border-radius: var(--rounded);
   box-shadow: 0 6px 18px rgba(17, 17, 17, 0.06);
