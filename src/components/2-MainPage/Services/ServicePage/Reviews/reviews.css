@@ -1,0 +1,31 @@
+.review-modal .modal-title {
+  font-size: 20px;
+  font-weight: bold;
+  position: relative;
+  padding-right: 40px;
+}
+
+.review-modal .close-btn {
+  position: absolute;
+  right: 10px;
+  top: 5px;
+}
+
+.modal-body {
+  padding-top: 10px !important;
+}
+
+.error {
+  color: red;
+  font-size: 13px;
+  margin-top: -5px;
+  display: block;
+}
+
+.success-message {
+  color: green;
+  font-size: 18px;
+  text-align: center;
+  padding: 25px 0;
+  font-weight: bold;
+}

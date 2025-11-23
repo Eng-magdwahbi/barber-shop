@@ -6,8 +6,9 @@ import CallOutlinedIcon from "@mui/icons-material/CallOutlined";
 import AccountCircleOutlinedIcon from "@mui/icons-material/AccountCircleOutlined";
 
 export default function Header() {
-  const [active, setActive] = useState(null);
+  const [active, setActive] = useState(0);
   const links = ["Services", "Barber", "Reviews"];
+  const linksGo = ["services", "barber", "reviews"];
 
   return (
     <header>
@@ -17,7 +18,7 @@ export default function Header() {
             {links.map((link, index) => (
               <li key={index}>
                 <a
-                  href="#"
+                  href={`#${linksGo[index]}`}
                   onClick={() => setActive(index)}
                   className={active === index ? "active" : ""}
                 >

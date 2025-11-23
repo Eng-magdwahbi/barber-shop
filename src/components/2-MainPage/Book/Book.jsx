@@ -2,6 +2,8 @@ import { useState } from "react";
 import "./book.css";
 import PhoneIcon from "@mui/icons-material/Phone";
 import EmailIcon from "@mui/icons-material/Email";
+import { useNavigate } from "react-router-dom";
+
 const days = [
   { name: "Sunday", hours: null },
   { name: "Monday", hours: "10 AM - 5 PM" },
@@ -30,7 +32,7 @@ export default function Book() {
   const [showContact, setShowContact] = useState(false);
   const todayIndex = getCurrentDayIndex();
   const openNow = isOpenNow(todayIndex);
-
+  const navigate = useNavigate();
   // find next opening day for simple message (used when closed)
   function findNextOpen(indexStart = todayIndex + 1) {
     for (let i = 0; i < 7; i++) {
@@ -46,7 +48,14 @@ export default function Book() {
     <div className="schedule-card">
       <div className="card-top">
         <h2 className="title">Hair Zone</h2>
-        <button className="book-btn">Book</button>
+        <button
+          className="book-btn"
+          onClick={() => {
+            navigate("/servicesRoute");
+          }}
+        >
+          Book
+        </button>
       </div>
 
       <div className="status-row">

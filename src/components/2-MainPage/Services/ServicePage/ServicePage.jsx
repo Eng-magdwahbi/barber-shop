@@ -1,59 +1,33 @@
+import Reviews from "./Reviews/Reviews";
 import Barbers from "../Barbers/Barbers";
 import "./servicepage.css";
+import { useState } from "react";
+import CallOutlinedIcon from "@mui/icons-material/CallOutlined";
+import ChevronRightIcon from "@mui/icons-material/ChevronRight";
+import EmailOutlinedIcon from "@mui/icons-material/EmailOutlined";
+
+import { useNavigate } from "react-router-dom";
 
 // Haircut Array
-const haircutArray = [
-  { name: "Haircut", time: "30", price: "40", img: "/images/15.png" },
-  {
-    name: "Haircut and Bread (Basic)",
-    time: "30",
-    price: "45",
-    img: "/images/30.png",
-  },
-  {
-    name: "Haircut and Bread (Premium)",
-    time: "30",
-    price: "50",
-    img: "/images/60.png",
-  },
-  {
-    name: "Wet Scissor Cut. (No Machine, Scissor Only)",
-    time: "30",
-    price: "55",
-    img: "",
-  },
-  { name: "Traditional Wet Shave", time: "20", price: "55", img: "" },
-  {
-    name: "Haircut and bread (Premium) + Bread Colour",
-    time: "45",
-    price: "60",
-    img: "",
-  },
-  { name: "Haircut and Wet Shave", time: "40", price: "85", img: "" },
-  { name: "Bread Only (Basic)", time: "15", price: "25", img: "" },
-  { name: "Bread Only (Premium)", time: "15", price: "30", img: "" },
-  { name: "Child Haircut (Under 16)", time: "25", price: "30", img: "" },
-  {
-    name: "Wet Scissor Cut Child (No Machine, Scissor Only)",
-    time: "30",
-    price: "40",
-    img: "",
-  },
-  { name: "Hair-line Only", time: "10", price: "20", img: "" },
-  { name: "Hair-line and Bread (Basic)", time: "20", price: "30", img: "" },
-  { name: "Hair-line and Bread (Premium)", time: "20", price: "35", img: "" },
-];
-
-import ChevronRightIcon from "@mui/icons-material/ChevronRight";
+import { haircutArray } from "./Haircut";
 export default function ServicePage() {
+  const [openReview, setOpenReview] = useState(false);
+  const navigate = useNavigate();
+
   return (
-    <div className="main-service-page">
+    <div className="main-service-page" id="services">
       <h2 className="title-service-page">Services</h2>
 
       <div className="content-service-page">
-        {haircutArray.map((box) => {
+        {haircutArray.map((box, index) => {
           return (
-            <div className="haircut">
+            <div
+              key={index}
+              className="haircut"
+              onClick={() => {
+                navigate("/barbers", { state: box });
+              }}
+            >
               <div className="img-des">
                 <div className="img">
                   <img className="" src={box.img} />
@@ -74,6 +48,37 @@ export default function ServicePage() {
           );
         })}
       </div>
+      <Barbers
+        onClick={() => {
+          navigate("/servicesRoute");
+        }}
+      />
+      {/* Contact US */}
+      <div className="contact-us-section">
+        <h2 className="contact-us-title">Contact us</h2>
+        <div className="contact-number information">
+          <CallOutlinedIcon />
+          <p className="number">+1 246 262-0000</p>
+        </div>
+        <div className="contact-email information">
+          <EmailOutlinedIcon />
+          <p className="email">thelionsdenbb@gmail.com</p>
+        </div>
+      </div>
+      {/* Reviews */}
+      <div className="reviews-section" id="reviews">
+        <h2 className="reviews-title">Reviews</h2>
+        <div className="reviews-content">
+          <p className="reviews-p">
+            Be the first to review us and share insights about your experience.
+          </p>
+          <button className="review-us-btn" onClick={() => setOpenReview(true)}>
+            Write a review
+          </button>
+        </div>
+      </div>
+
+      <Reviews open={openReview} onClose={() => setOpenReview(false)} />
     </div>
   );
 }

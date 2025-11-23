@@ -1,24 +1,24 @@
 import "./barbers.css";
-export default function Barbers() {
+
+import ChevronRightIcon from "@mui/icons-material/ChevronRight";
+export default function Barbers({ onClick }) {
+  const barbers = ["Badeh", "Hussam", "Ahmad"];
   return (
-    <div className="barber-card">
-      <div className="header-barber">
-        <h1 className="title-barber">Barber</h1>
-      </div>
-
-      <div className="main-content">
-        <div className="name-card">
-          <h2 className="name">Brandon Gill</h2>
-        </div>
-
-        <div className="name-card">
-          <h2 className="name">Carter</h2>
-        </div>
-
-        <div className="name-card">
-          <h2 className="name">Caleb Foster</h2>
-        </div>
-      </div>
+    <div className="barber-card" id="barber">
+      <h2 className="title-barbers-page">Barbers</h2>
+      {barbers.map((barber, index) => {
+        return (
+          <div
+            className="barber-name-card"
+            key={index}
+            onClick={() => onClick && onClick(barber)}
+            style={{ cursor: "pointer" }} // شكل الكورسر لتحسين التجربة
+          >
+            <p className="barber-name">{barber}</p>
+            <ChevronRightIcon className="chevron-right-icon" />
+          </div>
+        );
+      })}
     </div>
   );
 }

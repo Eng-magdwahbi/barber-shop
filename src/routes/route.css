@@ -1,0 +1,70 @@
+.barber-page-card {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  gap: 30px;
+  padding: 30px 0;
+}
+.left-barber-card {
+  flex-grow: 0.75;
+}
+.right-barber-card {
+  flex-grow: 0.15;
+  background: linear-gradient(180deg, var(--card-bg), #fff);
+  border-radius: var(--rounded);
+  box-shadow: 0 6px 18px rgba(17, 17, 17, 0.06);
+  width: 350px;
+  padding: 25px 30px;
+}
+
+.right-barber-card .title h3 {
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 20px;
+}
+
+.summary h3 {
+  font-size: 18px;
+  margin-bottom: 15px;
+  font-weight: 600;
+}
+
+.haircut-name-barberPage {
+  font-size: 16px;
+  font-weight: 500;
+  margin-bottom: 3px;
+}
+
+.haircut-price-barberPage {
+  font-size: 16px;
+  float: right;
+  margin-top: -22px;
+}
+
+.haircut-time-barberPage {
+  font-size: 14px;
+  color: #555;
+  margin-bottom: 15px;
+}
+
+.summary hr {
+  border: none;
+  border-top: 1px solid #e0e0e0;
+  margin: 15px 0;
+}
+
+/* total */
+.haircut-total-barberPage {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.total-price {
+  font-size: 18px;
+  font-weight: 600;
+}
+.route-main-service-page {
+  margin: 0 auto;
+}
