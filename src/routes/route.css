@@ -68,3 +68,11 @@
 .route-main-service-page {
   margin: 0 auto;
 }
+@media (max-width: 1000px) {
+  .barber-page-card {
+    flex-direction: column;
+  }
+  .left-barber-card {
+    width: 100%;
+  }
+}

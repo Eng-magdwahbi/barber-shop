@@ -40,12 +40,12 @@ export default function Header() {
             <span className="tooltip-text">Share This Page</span>
           </div>
 
-          <div className="tooltip">
+          {/* <div className="tooltip">
             <button className="btn">
               <AccountCircleOutlinedIcon />
             </button>
             <span className="tooltip-text">Login</span>
-          </div>
+          </div> */}
         </div>
       </div>
     </header>

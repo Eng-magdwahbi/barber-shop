@@ -31,3 +31,8 @@
   color: gray;
   max-width: 500px;
 }
+@media (max-width: 1000px) {
+  .footer-container {
+    margin-left: 0;
+  }
+}

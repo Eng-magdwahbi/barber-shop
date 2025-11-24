@@ -203,10 +203,11 @@ Book Card
 }
 
 /* responsive */
-@media (max-width: 420px) {
+@media (max-width: 1000px) {
   .schedule-card {
     width: 92%;
     padding: 16px;
+    margin-bottom: 30px;
   }
   .title {
     font-size: 18px;

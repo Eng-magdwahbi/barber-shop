@@ -2,3 +2,10 @@
   display: flex;
   justify-content: space-between;
 }
+@media (max-width: 1000px) {
+  .services-container {
+    flex-direction: column;
+    justify-content: center;
+    margin-top: 50px;
+  }
+}

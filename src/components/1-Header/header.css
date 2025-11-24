@@ -159,3 +159,13 @@ header {
 }
 
 /* End Header Right Side */
+/* responsive */
+@media (max-width: 768px) {
+  .content {
+    flex-direction: column;
+    margin: 5px;
+    gap: 25px;
+    justify-content: space-around;
+    align-items: center;
+  }
+}
