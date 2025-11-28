@@ -12,6 +12,7 @@ import {
   IconButton,
 } from "@mui/material";
 import CloseIcon from "@mui/icons-material/Close";
+import emailjs from "@emailjs/browser";
 
 export default function Reviews({ open, onClose }) {
   const [rating, setRating] = useState(0);
@@ -39,15 +40,33 @@ export default function Reviews({ open, onClose }) {
 
     setLoading(true);
 
-    setTimeout(() => {
-      setLoading(false);
-      setSuccess(true);
+    const templateParams = {
+      fullName,
+      email,
+      rating,
+      review,
+    };
 
-      setTimeout(() => {
-        setSuccess(false);
-        onClose();
-      }, 1500);
-    }, 1500);
+    emailjs
+      .send(
+        "service_927oztj",
+        "template_cmxf9dr",
+        templateParams,
+        "qb329xjlM0fXYyvIf"
+      )
+      .then(() => {
+        setLoading(false);
+        setSuccess(true);
+
+        setTimeout(() => {
+          setSuccess(false);
+          onClose();
+        }, 1500);
+      })
+      .catch((error) => {
+        console.error("EmailJS Error:", error);
+        setLoading(false);
+      });
   };
 
   return (

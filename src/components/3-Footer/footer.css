@@ -1,6 +1,7 @@
 .footer {
   width: 100%;
   background-image: url("/images/background.jpg"); /* اللون الداكن مثل الصورة */
+  background-size: cover;
   padding: 80px 20px;
   display: flex;
 }
@@ -9,8 +10,15 @@
   text-align: left;
   max-width: 900px;
   margin-left: 20%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 100px;
 }
-
+.img-footer img {
+  width: 200px;
+  height: 200px;
+}
 .footer-logo {
   color: #ffffff;
   /* font-size: 26px; */
@@ -34,5 +42,7 @@
 @media (max-width: 1000px) {
   .footer-container {
     margin-left: 0;
+    flex-direction: column;
+    gap: 50px;
   }
 }

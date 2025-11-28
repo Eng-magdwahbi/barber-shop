@@ -47,7 +47,7 @@ export default function Book() {
   return (
     <div className="schedule-card">
       <div className="card-top">
-        <h2 className="title">Hair Zone</h2>
+        <h2 className="title">O Zone</h2>
         <button
           className="book-btn"
           onClick={() => {
@@ -105,11 +105,23 @@ export default function Book() {
 
       {showContact && (
         <div className="contact-items">
-          <button className="contact-btn">
+          <button
+            className="contact-btn"
+            onClick={() => {
+              navigator.clipboard.writeText("+1 246 262-0000");
+              alert("Phone number copied!");
+            }}
+          >
             <PhoneIcon style={{ fontSize: 18 }} /> Phone
           </button>
 
-          <button className="contact-btn">
+          <button
+            className="contact-btn"
+            onClick={() => {
+              navigator.clipboard.writeText("magdwahbe@gmail.com");
+              alert("Email copied!");
+            }}
+          >
             <EmailIcon style={{ fontSize: 18 }} /> Email
           </button>
         </div>

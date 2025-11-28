@@ -13,10 +13,14 @@ import {
 } from "date-fns";
 import "./bookRoute.css";
 import { useLocation } from "react-router-dom";
+import emailjs from "@emailjs/browser";
 
 export default function BookRoute() {
   const [currentMonth, setCurrentMonth] = useState(new Date());
   const [selectedDate, setSelectedDate] = useState(null);
+  const [showModal, setShowModal] = useState(false);
+  const [clientEmail, setClientEmail] = useState("");
+
   const location = useLocation();
   const { name, price, time } = location.state || {};
 
@@ -27,9 +31,10 @@ export default function BookRoute() {
 
   const handlePrev = () => setCurrentMonth(subMonths(currentMonth, 1));
   const handleNext = () => setCurrentMonth(addMonths(currentMonth, 1));
+
   const availableDates = ["2025-02-14", "2025-11-24", "2025-02-21"];
 
-  // Generate calendar days between weekStart → weekEnd
+  // إنشاء الأيام بين بداية ونهاية الشهر
   const days = [];
   let day = weekStart;
 
@@ -37,6 +42,40 @@ export default function BookRoute() {
     days.push(day);
     day = addDays(day, 1);
   }
+
+  // إرسال الإيميل
+  const handleSendEmail = () => {
+    if (!clientEmail) {
+      alert("Please enter your email");
+      return;
+    }
+
+    const templateParams = {
+      email: clientEmail,
+      service_name: name,
+      price: price,
+      time: time,
+      date: selectedDate ? format(selectedDate, "yyyy-MM-dd") : "No date",
+    };
+
+    emailjs
+      .send(
+        "service_8hlwg7z",
+        "template_q67zjlv",
+        templateParams,
+        "qb329xjlM0fXYyvIf"
+      )
+      .then(
+        () => {
+          alert("Email sent successfully!");
+          setShowModal(false);
+        },
+        (error) => {
+          console.error("FAILED...", error);
+          alert("Failed to send email");
+        }
+      );
+  };
 
   return (
     <div className="booking-wrapper">
@@ -77,16 +116,12 @@ export default function BookRoute() {
           <div className="days-grid">
             {days.map((dayItem, index) => {
               const formatted = format(dayItem, "d");
-
               const isCurrentMonth = isSameMonth(dayItem, currentMonth);
               const isToday = isSameDay(dayItem, new Date());
               const isSelected =
                 selectedDate && isSameDay(dayItem, selectedDate);
 
-              // تحويل تاريخ اليوم لصيغة string
               const dateString = format(dayItem, "yyyy-MM-dd");
-
-              // هل اليوم متاح؟
               const isAvailable = availableDates.includes(dateString);
 
               return (
@@ -109,9 +144,14 @@ export default function BookRoute() {
                     {formatted}
                   </button>
 
-                  {/* زر Book يظهر فقط إذا اليوم متاح */}
+                  {/* زر Book يظهر فقط إذا اليوم متاح ومختار */}
                   {isAvailable && isSelected && (
-                    <button className="book-route-btn">Book</button>
+                    <button
+                      className="book-route-btn"
+                      onClick={() => setShowModal(true)}
+                    >
+                      Book
+                    </button>
                   )}
                 </div>
               );
@@ -121,13 +161,15 @@ export default function BookRoute() {
           <p className="timezone">Time zone (America/Barbados)</p>
         </div>
       </div>
+
+      {/* RIGHT SIDE */}
       <div className="right-barber-card">
         <div className="title">
-          <h3>Hair Zone</h3>
+          <h3>O Zone</h3>
         </div>
         <div className="summary">
           <h3>Summary</h3>
-          <div className="">
+          <div>
             <div className="haircut-name-barberPage">{name}</div>
             <div className="haircut-price-barberPage">{price}$</div>
             <div className="haircut-time-barberPage">{time} mins</div>
@@ -139,6 +181,33 @@ export default function BookRoute() {
           </div>
         </div>
       </div>
+
+      {/* MODAL */}
+      {showModal && (
+        <div className="modal-background">
+          <div className="modal">
+            <h2>Enter Your Email</h2>
+
+            <input
+              type="email"
+              placeholder="example@gmail.com"
+              value={clientEmail}
+              onChange={(e) => setClientEmail(e.target.value)}
+              className="email-input"
+            />
+
+            <div className="modal-buttons">
+              <button className="send-btn" onClick={handleSendEmail}>
+                Send
+              </button>
+
+              <button className="close-btn" onClick={() => setShowModal(false)}>
+                Cancel
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 }

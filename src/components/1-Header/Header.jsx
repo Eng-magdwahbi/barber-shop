@@ -33,12 +33,12 @@ export default function Header() {
           <CallOutlinedIcon />
           <p>Call us</p>
           <p>+1 246 262-0000</p>
-          <div className="tooltip">
+          {/* <div className="tooltip">
             <button className="btn">
               <FileUploadOutlinedIcon />
             </button>
             <span className="tooltip-text">Share This Page</span>
-          </div>
+          </div> */}
 
           {/* <div className="tooltip">
             <button className="btn">

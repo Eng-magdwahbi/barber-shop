@@ -30,7 +30,7 @@ export default function BarbersRoute() {
         </div>
         <div className="right-barber-card">
           <div className="title">
-            <h3>Hair Zone</h3>
+            <h3>O Zone</h3>
           </div>
           <div className="summary">
             <h3>Summary</h3>
